@@ -1,0 +1,41 @@
+<div class="app-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> This Week's To-Do List </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-list>
+      <ng-container *ngFor="let todo of todos$ | async; let last = last">
+        <mat-list-item lines="4" data-test-id="list-item">
+          <span matListItemAvatar
+            ><mat-checkbox
+              [checked]="todo.completed"
+              (change)="toggleCompleted(todo)"
+            ></mat-checkbox
+          ></span>
+          <span matListItemTitle>{{ todo.title }}</span>
+          <span matListItemLine class="item-id">{{ todo.id }}</span>
+          <span matListItemLine class="item-description">{{ todo.description }}</span>
+          <span matListItemLine class="completed-on">{{
+            todo.completed ? 'Completed on ' + todo.completedOn : 'Incomplete'
+          }}</span>
+          
+          
+          <span matListItemMeta class="item-actions">
+            <button mat-icon-button data-test-id="edit-button">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="delete(todo)" data-test-id="delete-button">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </span>
+        </mat-list-item>
+        <mat-divider *ngIf="!last"></mat-divider>
+      </ng-container>
+    </mat-list>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="add()" data-test-id="add-button">Add</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

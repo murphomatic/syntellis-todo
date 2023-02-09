@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 109.0.5414.120 (Windows 10)" package="unit" timestamp="2023-02-09T19:11:28" id="0" hostname="SMURPHY0322" tests="8" errors="0" failures="2" time="0.648">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/109.0.5414.120 Safari/537.36"/>
+  </properties>
+  <testcase name="The ToDo list app component should get created without error" time="0.145" classname=".The ToDo list app component"/>
+  <testcase name="The ToDo list app component should be able to dispatch an add action" time="0.065" classname=".The ToDo list app component"/>
+  <testcase name="The ToDo list app component should be able to dispatch a delete action" time="0.07" classname=".The ToDo list app component"/>
+  <testcase name="The ToDo list app component should be able to dispatch a toggle-completed action" time="0.063" classname=".The ToDo list app component"/>
+  <testcase name="The ToDo list app component should add a todo on dispatch of addToDoSuccess" time="0.074" classname=".The ToDo list app component"/>
+  <testcase name="The ToDo list app component should delete a todo on dispatch of deleteToDoSuccess" time="0.061" classname=".The ToDo list app component"/>
+  <testcase name="The ToDo list app component should be able to dispatch an edit action" time="0.106" classname=".The ToDo list app component">
+    <failure type="">Expected spy dispatch to have been called with:
+  [ Object({ toDo: Object({ id: 'test-id', title: 'test', completed: false }), type: '[TODO] Edit todo' }) ]
+but it was never called.
+Error: Expected spy dispatch to have been called with:
+  [ Object({ toDo: Object({ id: 'test-id', title: 'test', completed: false }), type: '[TODO] Edit todo' }) ]
+but it was never called.
+    at &lt;Jasmine&gt;
+    at UserContext.apply (src/app/components/app.component.spec.ts:48:22)
+    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:26)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:39)
+</failure>
+  </testcase>
+  <testcase name="The ToDo list app component should edit a todo on dispatch of editToDoSuccess" time="0.064" classname=".The ToDo list app component">
+    <failure type="">Error: Expected 'Learn Angular' to equal 'New Title'.
+    at &lt;Jasmine&gt;
+    at Object.next (src/app/components/app.component.spec.ts:85:39)
+    at ConsumerObserver.next (node_modules/rxjs/dist/esm/internal/Subscriber.js:91:33)
+    at SafeSubscriber._next (node_modules/rxjs/dist/esm/internal/Subscriber.js:60:26)
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

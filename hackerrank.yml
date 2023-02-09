@@ -1,0 +1,37 @@
+version: 1.0
+configuration:
+  has_webserver: true
+  scoring:
+    command: npm install --silent && npm test
+    files:
+      - unit.xml
+    # Define hidden test cases and declare file paths below to evaluate candidates' submissions.
+    #
+    # Learn more:
+    # https://support.hackerrank.com/hc/en-us/articles/4761491631635-Hidden-Test-Cases-for-Front-End-Back-End-and-Full-Stack-Questions
+    #
+    # hidden_files_paths:
+    #   - tests/custom_test_[1-2].sh
+    #   - app/secret_test
+  readonly_paths:
+    - src/app/components/app.component.spec.ts
+    - src/app/components/todo-dialog/todo-dialog.component.html
+    - src/app/components/todo-dialog/todo-dialog.component.scss
+    - src/app/components/todo-dialog/todo-dialog.component.ts
+    - src/app/+state/app.selectors.ts
+    - src/app/+state/app.actions.ts
+    - src/app/+state/app.state.ts
+    - src/app/app.module.ts
+    - src/app/models/todo.model.ts
+    - src/app/services/to-do.service.ts
+
+  ide_config:
+    default_open_files:
+      - src/app/components/app.component.ts
+      - src/app/components/app.component.html
+      - src/app/+state/app.effects.ts
+      - src/app/+state/app.reducer.ts
+    project_menu:
+      run: npm start
+      install: npm install --silent
+      test: npm test

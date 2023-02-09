@@ -1,0 +1,37 @@
+<div class="edit-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <div>{{ form.value.id == 'new-todo' ? 'Add' : 'Edit' }} To-Do</div>
+      </mat-card-title>
+      <small>ID: {{ form.value.id }}</small>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content [formGroup]="form">
+      <div class="todo-form">
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" data-test-id="dialog-title-input"/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" data-test-id="dialog-description-input"></textarea>
+        </mat-form-field>
+        <mat-checkbox formControlName="completed" data-test-id="dialog-completed-checkbox">Completed</mat-checkbox>
+      </div>
+      <div
+        class="completed-on"
+        [ngStyle]="{ visibility: form.value.completed ? 'visible' : 'hidden' }"
+      >
+        {{ form.value.completedOn }}
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="save()" data-test-id="dialog-save-button">Save</button>
+      <button mat-raised-button color="accent" (click)="cancel()" data-test-id="dialog-cancel-button">
+        Cancel
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

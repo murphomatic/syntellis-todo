@@ -1,0 +1,42 @@
+.edit-container {
+  mat-card {
+    background-color: whitesmoke;
+
+    .completed-on {
+      font-size: x-small;
+      color: darkslategray;
+    }
+
+    mat-card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    mat-card-content {
+      margin: 8px;
+
+      .todo-form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+
+      }
+    }
+
+    mat-card-actions {
+      justify-content: flex-end;
+
+      button {
+        flex: 0 0 80px;
+
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

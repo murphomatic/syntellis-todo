@@ -1,0 +1,47 @@
+.app-container {
+  height: 100%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+
+  mat-card {
+    width: 50%;
+
+    .completed-on {
+      font-size: x-small;
+      color: darkslategray;
+    }
+
+    [matlistitemline] {
+      display: flex;
+    }
+
+    .item-id {
+      font-size: x-small;
+      color: darkslategray;
+      height: 12px;
+    }
+    [matlistitemtitle] {
+      display: flex;
+      font-weight: 500;
+    }
+    .item-description {
+      height: 27px;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .item-actions {
+      align-self: center;
+    }
+
+    mat-card-actions {
+      justify-content: center;
+    }
+  }
+
+}
