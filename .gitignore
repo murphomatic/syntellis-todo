@@ -229,4 +229,3 @@ node_modules/
 dist/
 
 # Ignore IDE settings
-.vscode/
