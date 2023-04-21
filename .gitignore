@@ -227,3 +227,6 @@ pickle-email-*.html
 node_modules/
 .angular/
 dist/
+
+# Ignore IDE settings
+.vscode/
