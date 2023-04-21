@@ -17,19 +17,19 @@ export class AppComponent {
     this.store.dispatch(ToDoActions.getToDos());
   }
 
-  add() {
+  onAdd() {
     this.store.dispatch(ToDoActions.addToDo());
   }
 
-  edit(toDo: ToDo) {
+  onEdit(toDo: ToDo) {
     // TODO: Dispatch an action to edit the todo
   }
 
-  delete(toDo: ToDo) {
+  onDelete(toDo: ToDo) {
     this.store.dispatch(ToDoActions.deleteToDo({ toDo }));
   }
 
-  toggleCompleted(toDo: ToDo) {
+  onToggleCompleted(toDo: ToDo) {
     this.store.dispatch(ToDoActions.toggleCompleted({ toDo }));
   }
 

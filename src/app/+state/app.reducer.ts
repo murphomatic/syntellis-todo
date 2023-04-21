@@ -13,7 +13,8 @@ export const appReducer = createReducer(
   })),
   
   // TODO: Create reducer here to listen for ToDoActions.editToDoSuccess
-
+  //       This reducer should update the toDo in the new state being returned
+  
   on(ToDoActions.deleteToDoSuccess, (state, { toDo }) => ({
     ...state,
     loading: false,

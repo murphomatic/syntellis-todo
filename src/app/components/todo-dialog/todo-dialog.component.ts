@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy } from "@angular/core";
+import { Component, Inject, OnDestroy, inject } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Subscription } from "rxjs";
@@ -24,10 +24,9 @@ export class ToDoDialogComponent implements OnDestroy {
 
   constructor(
     public fb: FormBuilder,
-    public dialogRef: MatDialogRef<ToDoDialogComponent, ToDo | undefined>,
-    @Inject(MAT_DIALOG_DATA)
-    data: ToDo | undefined
+    public dialogRef: MatDialogRef<ToDoDialogComponent, ToDo | undefined>
   ) {
+    let data: ToDo | undefined = inject(MAT_DIALOG_DATA);
     if (data) {
       this.form.patchValue(data);
     }
@@ -51,11 +50,11 @@ export class ToDoDialogComponent implements OnDestroy {
   ngOnDestroy() {
     this.completedSub.unsubscribe();
   }
-  save() {
+  onSave() {
     this.dialogRef.close({ ...this.form.value } as ToDo);
   }
 
-  cancel() {
+  onCancel() {
     this.dialogRef.close();
   }
 }

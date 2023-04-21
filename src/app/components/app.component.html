@@ -10,7 +10,7 @@
           <span matListItemAvatar
             ><mat-checkbox
               [checked]="todo.completed"
-              (change)="toggleCompleted(todo)"
+              (change)="onToggleCompleted(todo)"
             ></mat-checkbox
           ></span>
           <span matListItemTitle>{{ todo.title }}</span>
@@ -22,10 +22,11 @@
           
           
           <span matListItemMeta class="item-actions">
+            <!-- implement a click handler on this button to call onEdit, passing the current todo object -->
             <button mat-icon-button data-test-id="edit-button">
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button (click)="delete(todo)" data-test-id="delete-button">
+            <button mat-icon-button (click)="onDelete(todo)" data-test-id="delete-button">
               <mat-icon>delete</mat-icon>
             </button>
           </span>
@@ -35,7 +36,7 @@
     </mat-list>
     <mat-divider></mat-divider>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="add()" data-test-id="add-button">Add</button>
+      <button mat-raised-button color="primary" (click)="onAdd()" data-test-id="add-button">Add</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -34,12 +34,12 @@ describe("The ToDo list app component", () => {
   });
 
   it("should be able to dispatch an add action", () => {
-    appComponent.add();
+    appComponent.onAdd();
     expect(storeSpy).toHaveBeenCalledWith(ToDoActions.addToDo());
   });
 
   it("should be able to dispatch an edit action", () => {
-    appComponent.edit({ id: "test-id", title: "test", completed: false });
+    appComponent.onEdit({ id: "test-id", title: "test", completed: false });
     expect(storeSpy).toHaveBeenCalledWith(
       ToDoActions.editToDo({
         toDo: { id: "test-id", title: "test", completed: false },
@@ -48,7 +48,7 @@ describe("The ToDo list app component", () => {
   });
 
   it("should be able to dispatch a delete action", () => {
-    appComponent.delete({ id: "test-id", title: "test", completed: false });
+    appComponent.onDelete({ id: "test-id", title: "test", completed: false });
     expect(storeSpy).toHaveBeenCalledWith(
       ToDoActions.deleteToDo({
         toDo: { id: "test-id", title: "test", completed: false },
@@ -57,7 +57,7 @@ describe("The ToDo list app component", () => {
   });
 
   it("should be able to dispatch a toggle-completed action", () => {
-    appComponent.toggleCompleted({
+    appComponent.onToggleCompleted({
       id: "test-id",
       title: "test",
       completed: false,

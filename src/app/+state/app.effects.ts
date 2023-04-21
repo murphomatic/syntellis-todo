@@ -51,6 +51,15 @@ export class AppEffects {
   );
 
   // TODO: Create effect here to listen for ToDoActions.editToDo
+  //       This effect should open the ToDoDialogComponent in a modal dialog
+  //       Similar to how the addToDo$ effect above does.
+  /*
+  editToDo$ = createEffect(() => 
+    ... implentation here
+  );
+
+
+  */
 
   deleteToDo$ = createEffect(() =>
     this.actions$.pipe(
